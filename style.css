@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Sans-Serif;
+  color: #000;
+}
+#container {
+  text-align: center;
+}
+#subscribe-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 80%;
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0 10px;
+}
+#subscribe-form h2 {
+  font-size: 1.9rem;
+}
+#subscribe-form > p {
+  font-size: 1.1rem;
+}
+#subscribe-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  margin: 50px 0 0 0;
+}
+#subscribe-form form > p, a {
+  color: #333;
+  font-size: .8rem;
+}
+#subscribe-form form a:hover {
+  cursor: pointer;
+  color: #000;
+}
+#subscribe-form input[type=email] {
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #555555;
+  font-size: 1rem;
+}
+.confirmation {
+  position: absolute;
+  transform: translateY(20px);
+  background-color: #46ff85;
+  padding: 10px 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: .5;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.confirmation h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.confirmation p {
+  font-size: .8rem;
+}
+.confirmation.show {
+  opacity: 1;
+  transform: translateY(-35px);
+  visibility: visible;
+}
+#subscribe-form input[type=submit] {
+  border: none;
+  padding: 15px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #eee;
+  border-radius: 10px;
+  background-image: linear-gradient(30deg,#2c69d1,#0abcf9);
+  background-repeat: no-repeat;
+  transition: transform .1s;
+}
+#subscribe-form input[type=submit]:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  #subscribe-form {
+    background-color: rgba(0,0,0,0.25);
+    border: 1px solid rgb(51,51,51,.15);
+    box-shadow: 0 8px 32px 0 rgba(255,255,255,0.37);
+  }
+  #subscribe-form form > p, a {
+    color: #eee;
+  }
+  #subscribe-form form a:hover {
+    color: #fff;
+  }
+  #subscribe-form input[type=email] {
+    color: #fff;
+    border-bottom-color: #eee;
+  }
+  .confirmation, #subscribe-form input[type=submit] {
+    color: #333;
+  }
+}
+@media (min-width: 481px){
+  #subscribe-form {
+    min-width: 400px;
+    padding: 50px 25px;
+  }
+  #subscribe-form h2 {
+    font-size: 2.1rem;
+  }
+  #subscribe-form p {
+    font-size: 1.3;
+  }
+  #subscribe-form input[type=submit] {
+  font-size: 1.2rem;
+  }
+  #subscribe-form form > p, a {
+  font-size: 1rem;
+  }
+  #subscribe-form input[type=email] {
+    font-size: 1.2rem;
+  }
+  .confirmation h4 {
+    font-size: 1.3rem;
+  }
+  .confirmation p {
+    font-size: 1rem;
+  }
+}
