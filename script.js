@@ -10,7 +10,7 @@ function confirm() {
 function validateForm() {
   var x = document.forms["Form"]["email"].value;
   if (x == "") {
-    alert("N Email Found");
+    alert("No Email Found");
     return false;
   } else {confirm()} 
 }
