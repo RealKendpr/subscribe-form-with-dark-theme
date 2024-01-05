@@ -3,27 +3,27 @@
   margin: 0;
 }
 body {
-  font-family: Sans-Serif;
+  font-family: sans-serif;
   color: #000;
 }
 #container {
+  height: 100svh;
+  display: grid;
+  place-items: center;
   text-align: center;
 }
 #subscribe-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
   width: 80%;
+  min-width: 375px;
   padding: 40px 20px;
-  background: rgba(255,255,255,0.25);
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px;
 }
-#subscribe-form h2 {
+h1 {
   font-size: 1.9rem;
 }
 #subscribe-form > p {
@@ -34,64 +34,75 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  gap: 8px;
+  gap: 20px;
   margin: 50px 0 0 0;
 }
-#subscribe-form form > p, a {
+#subscribe-form form > p,
+a {
   color: #333;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 #subscribe-form form a:hover {
   cursor: pointer;
   color: #000;
 }
-#subscribe-form input[type=email] {
+#email {
   background-color: transparent;
   width: 100%;
   outline: none;
   border: none;
   border-bottom: 2px solid #555555;
   font-size: 1rem;
+  padding: 0 10px;
 }
-.confirmation {
+.alert-box {
   position: absolute;
   transform: translateY(20px);
-  background-color: #46ff85;
-  padding: 10px 0;
+  padding: 10px;
   width: 100%;
   visibility: hidden;
-  opacity: .5;
+  opacity: 0.5;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  color: #efefef;
 }
-.confirmation h4 {
-  font-size: 1.1rem;
+.confirm {
+  background: #2c69d1;
+}
+.denied {
+  background: #d1692c;
+}
+.alert-box h2 {
+  font-size: 1rem;
   font-weight: bold;
 }
-.confirmation p {
-  font-size: .8rem;
+.alert-box p {
+  font-size: 0.8rem;
 }
-.confirmation.show {
+.confirm.show, .denied.show {
   opacity: 1;
   transform: translateY(-35px);
   visibility: visible;
 }
-#subscribe-form input[type=submit] {
+#subscribe-form input[type="submit"] {
   border: none;
-  padding: 15px 10px;
+  padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  color: #eee;
-  border-radius: 10px;
-  background-image: linear-gradient(30deg,#2c69d1,#0abcf9);
+  color: #efefef;
+  border-radius: 4px;
+  background-image: linear-gradient(30deg, #2c69d1, #0abcf9);
   background-repeat: no-repeat;
-  transition: transform .1s;
+  transition: transform 0.1s;
 }
-#subscribe-form input[type=submit]:hover {
+#subscribe-form input[type="submit"]:hover {
   transform: scale(0.9);
   cursor: pointer;
+}
+#agreements {
+  text-wrap: balance;
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -99,25 +110,23 @@ body {
     color: #fff;
   }
   #subscribe-form {
-    background-color: rgba(0,0,0,0.25);
-    border: 1px solid rgba(51,51,51,.15);
-    box-shadow: 0 8px 32px 0 rgba(255,255,255,0.37);
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   }
-  #subscribe-form form > p, a {
+  #subscribe-form form > p,
+  a {
     color: #eee;
   }
   #subscribe-form form a:hover {
     color: #fff;
   }
-  #subscribe-form input[type=email] {
+  #subscribe-form #email {
     color: #fff;
     border-bottom-color: #eee;
   }
-  .confirmation, #subscribe-form input[type=submit] {
-    color: #333;
-  }
 }
-@media (min-width: 481px){
+@media (width >= 481px) {
   #subscribe-form {
     max-width: 400px;
     padding: 50px 25px;
@@ -125,19 +134,22 @@ body {
   #subscribe-form h2 {
     font-size: 2.1rem;
   }
-  #subscribe-form p, .confirmation h4 {
+  #subscribe-form p,
+  .alert-box h2 {
     font-size: 1.3rem;
   }
   #subscribe-form form {
     gap: 12px;
   }
-  #subscribe-form input[type=submit] {
-  font-size: 1.2rem;
+  #subscribe-form input[type="submit"] {
+    font-size: 1.2rem;
   }
-  #subscribe-form form > p, a,   .confirmation p {
-  font-size: 1rem;
+  #subscribe-form form > p,
+  a,
+  .alert-box p {
+    font-size: 1rem;
   }
-  #subscribe-form input[type=email] {
+  #subscribe-form #email {
     font-size: 1.2rem;
     width: 50%;
   }

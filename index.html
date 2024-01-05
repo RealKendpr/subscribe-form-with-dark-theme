@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="#" type="image/x-icon" />
-  <meta name="title" content="Simple & Responsive Subscribe Form">
-  <meta name="description" content="Free, Simple, and Responsive Subscribe form with auto Dark Mode made using Html, Css, and Javascript">
-  <meta name="keywords" content="subscribe form,subscribe form codepen,subscribe form design,subscribe form examples,subscribe form html,subscribe form html css,subscribe form html template,subscribe form template, js, css, html, javascript, open source, codepen, github">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  <meta name="author" content="ThisGuyIsUnknown">
-  <title>Subscribe Form</title>
-</head>
-<body>
-  <div id="container">
-    <div id="subscribe-form">
-      <h2>SUBSCRIBE</h2>
-      <p>To get daily <b>SPAM</b> updates!</p>
-      <form id="Form" action="#" method="get" onsubmit="return validateForm()" accept-charset="utf-8">
-        <input type="email" name="email" id="email" placeholder="Your Email..."/>
-        <div class="confirmation" id="confirm">
-          <h4>Weve just sent you an Email!</h4>
-          <p>Please check your inbox or spam</p>
-        </div>
-        <input type="submit" name="submit" id="submit" value="Send Me Emails"/>
-        <p><i>By continuing, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></i></p>
-      </form>
-    </div>
-  </div>
-	<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <meta name="title" content="Simple & Responsive Subscribe Form" />
+    <meta
+      name="description"
+      content="Free, Simple, and Responsive Subscribe form with auto Dark Mode made using Html, Css, and Javascript"
+    />
+    <meta
+      name="keywords"
+      content="subscribe form,subscribe form codepen,subscribe form design,subscribe form examples,subscribe form html,subscribe form html css,subscribe form html template,subscribe form template, js, css, html, javascript, open source, codepen, github"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="Kendpr" />
+    <title>Subscribe Form</title>
+  </head>
+  <body>
+    <main id="container">
+      <div id="subscribe-form">
+        <h1>SUBSCRIBE</h1>
+        <p>To get daily <b>SPAM</b> updates!</p>
+        <form
+          id="form"
+          action="#"
+          method="#"
+          onsubmit="return validateForm()"
+          accept-charset="utf-8"
+        >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email..."
+          />
+          <div class="alert-box confirm">
+            <h2>Weve just sent you an Email!</h2>
+            <p>Please check your inbox or spam</p>
+          </div>
+          <div class="alert-box denied">
+            <h2>Email submit failed</h2>
+            <p>Make sure the field has an email is formatted correctly</p>
+          </div>
+          <input
+            type="submit"
+            name="submit"
+            id="submit"
+            value="Send Me Emails"
+          />
+          <p id="agreements">
+            <i
+              >By continuing, you agree to our
+              <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a></i
+            >
+          </p>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

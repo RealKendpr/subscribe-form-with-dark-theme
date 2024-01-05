@@ -1,20 +1,51 @@
+const confirmBox = document.getElementsByClassName("confirm")[0];
+const denyBox = document.getElementsByClassName("denied")[0];
+const emailInput = document.getElementById("email");
+
+let form = document.forms["form"]["email"];
+
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
 function confirm() {
-  document.getElementById('confirm').classList.toggle("show");
-  setTimeout(() => {
-    document.getElementById("confirm").classList.remove('show');
-    const email = document.getElementById('email'); 
-    console.log(email.value);
-    email.value = '';
+  if (emailInput.value.match(emailRegex)) {
+    confirmBox.classList.add("show");
+
+    setTimeout(() => {
+      confirmBox.remove("show");
+      location.reload();
     }, 1500);
-}
-function validateForm() {
-  var x = document.forms["Form"]["email"].value;
-  if (x == "") {
-    alert("No Email Found");
-    return false;
-  } else {confirm()} 
+  } else {
+    deny();
+  }
+
+  // confirmBox.classList.add("show");
+  // setTimeout(() => {
+  //   confirmBox.remove("show");
+  //   location.reload();
+  // }, 1500);
 }
 
-var form = document.getElementById("Form");
-function handleForm(event) { event.preventDefault(); } 
-form.addEventListener('submit', handleForm);
+function deny() {
+  denyBox.classList.add("show");
+
+  setTimeout(() => {
+    denyBox.remove("show");
+    location.reload();
+  }, 1500);
+}
+
+function validateForm() {
+  if (form.value == "") {
+    // alert("No Email Found");
+    deny();
+    return false;
+  } else {
+    confirm();
+    emailInput.value = "";
+  }
+}
+
+function handleForm(event) {
+  event.preventDefault();
+}
+form.addEventListener("submit", handleForm);
